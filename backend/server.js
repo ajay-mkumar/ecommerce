@@ -31,8 +31,7 @@ app.use('/api/cart',CartRouter);
 app.use('/api/upload',UploadRouter);
 
 app.get('/api/config/paypal',(req,res)=>res.json({clientId:process.env.PAYPAL_CLIENT_ID}))
-app.use(notFound);
-app.use(errorHandler)
+
 if (process.env.NODE_ENV === 'production') {
     const __dirname = path.resolve();
     app.use('/uploads', express.static('/var/data/uploads'));
@@ -48,9 +47,10 @@ if (process.env.NODE_ENV === 'production') {
       res.send('API is running....');
     });
   }
+
+app.use(notFound);
+app.use(errorHandler)
   
-const __dirname=path.resolve();
-app.use('/uploads',express.static(path.join(__dirname,'/uploads')));
 
 app.listen(port,()=>{
     console.log("server started...")

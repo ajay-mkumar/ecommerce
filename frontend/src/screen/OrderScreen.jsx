@@ -140,7 +140,7 @@ const OrderScreen = () => {
                             </Link>
                             </Col>
                             <Col md={4}>
-                                {item.qty} x Rs.{item.price}=Rs.{item.qty * item.price}
+                                {item.qty} x $.{item.price}=$S.{item.qty * item.price}
                             </Col>
                         </Row>
                     </ListGroup.Item>
@@ -159,7 +159,7 @@ const OrderScreen = () => {
                                 Items:
                                 </Col>
                                 <Col>
-                                Rs.{order.itemPrice}
+                                $.{order.itemPrice}
                                 </Col>
                             </Row>
                         </ListGroup.Item>
@@ -170,7 +170,7 @@ const OrderScreen = () => {
                                 Shipping:
                                 </Col>
                                 <Col>
-                                Rs.{order.shippingPrice}
+                                $.{order.shippingPrice}
                                 </Col>
                             </Row>
                         </ListGroup.Item>
@@ -181,7 +181,7 @@ const OrderScreen = () => {
                                 Tax:
                                 </Col>
                                 <Col>
-                                Rs.{order.taxPrice}
+                                $.{order.taxPrice}
                                 </Col>
                             </Row>
                         </ListGroup.Item>

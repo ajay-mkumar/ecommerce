@@ -34,6 +34,7 @@ app.get('/api/config/paypal',(req,res)=>res.json({clientId:process.env.PAYPAL_CL
 
 if (process.env.NODEENV === 'production') {
     const __dirname = path.resolve();
+    app.use('/uploads', express.static('/var/data/uploads'));
     app.use(express.static(path.join(__dirname, '/frontend/build')));
   
     app.get('*', (req, res) =>

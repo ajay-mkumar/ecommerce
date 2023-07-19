@@ -41,7 +41,7 @@ router.post('/', (req, res) => {
 
     res.status(200).json({
       message: 'Image uploaded successfully',
-      image: `/${req.file.path}`,
+      image: `/uploads/${req.file.filename}`,
     });
   }
   });

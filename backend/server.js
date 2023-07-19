@@ -34,7 +34,7 @@ app.get('/api/config/paypal',(req,res)=>res.json({clientId:process.env.PAYPAL_CL
 
 if (process.env.NODEENV === 'production') {
     const __dirname = path.resolve();
-    app.use(express.static(path.join(__dirname, '/frontend/public')));
+    app.use(express.static(path.join(__dirname, '/frontend/build')));
   
     app.get('*', (req, res) =>
       res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
